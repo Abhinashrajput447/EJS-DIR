@@ -17,6 +17,12 @@ app.get("/hello", (req, res) => {
     res.send("Hello");
 });
 
+app.get("/rolldice", (req, res) => {
+    let diceVal = Math.floor(Math.random()*6)+1; // assume values comming from DataBase
+    // res.render("rolldice.ejs", {num : diceVal}); //Key : value
+    res.render("rolldice", {diceVal});
+})
+
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
